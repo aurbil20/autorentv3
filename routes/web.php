@@ -13,27 +13,44 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+// Public pages interfaces
+
 Route::get('/', function () {
-    return view('index');
+    return view('publicpages.index');
 })->name('home');
 
 Route::get('/catalogue', function () {
-    return view('catalogue');
+    return view('publicpages.catalogue');
 })->name('catalogue');
 
 Route::get('/detail', function () {
-    return view('detail');
+    return view('publicpages.detail');
 })->name('detail');
 
 Route::get('/register', function () {
-    return view('register');
+    return view('publicpages.register');
 })->name('register');
 
 Route::get('/login', function () {
-    return view('login');
+    return view('publicpages.login');
 })->name('login');
 
 Route::get('/aboutus', function () {
-    return view('aboutus');
+    return view('publicpages.aboutus');
 })->name('aboutus');
 
+
+
+
+
+
+// Dashboard Interfaces 
+
+Route::get('/dash', function () {
+    return view('dashboard.index');
+})->name('dashboard');
+
+Route::get('/dash/vehicule', function () {
+    return view('dashboard.vehicule');
+})->name('dashoboard-allvehicle');
