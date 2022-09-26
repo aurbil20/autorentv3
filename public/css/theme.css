@@ -836,7 +836,7 @@ section {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-    background: #4272d7;
+    background: #d19c97;
     margin-left: -3px;
 }
 
@@ -1538,7 +1538,7 @@ section {
 }
 
 .account-dropdown__item a:hover {
-    background: #4272d7;
+    background: #d19c97;
     color: #fff;
 }
 
@@ -1565,7 +1565,7 @@ section {
 }
 
 .account-dropdown__footer a:hover {
-    background: #4272d7;
+    background: #d19c97;
     color: #fff;
 }
 
@@ -1645,7 +1645,7 @@ section {
 }
 
 .navbar-sidebar .navbar__list li.active > a {
-    color: #4272d7;
+    color: #D19C97;
 }
 
 .has-sub {
@@ -2246,7 +2246,7 @@ section {
 }
 
 .navbar-sidebar2 .navbar__list li:hover > a {
-    color: #4272d7;
+    color: #D19C97;
 }
 
 .navbar-sidebar2 .navbar__list li a {
@@ -2262,7 +2262,7 @@ section {
 }
 
 .navbar-sidebar2 .navbar__list li.active > a {
-    color: #4272d7;
+    color: #D19C97;
 }
 
 .navbar-sidebar2 .navbar__sub-list {
@@ -2734,7 +2734,7 @@ section {
 }
 
 .header__navbar ul li.active > a {
-    color: #4272d7;
+    color: #D19C97;
 }
 
 .header__navbar ul li.active > a .bot-line {
@@ -3043,7 +3043,7 @@ section {
 }
 
 .navbar-sidebar3 .navbar__list li.active > a {
-    background: #4272d7;
+    background: #D19C97;
     color: #fff;
 }
 

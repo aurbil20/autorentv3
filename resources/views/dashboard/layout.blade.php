@@ -19,11 +19,13 @@
     <link href="{{ asset('vendor/mdi-font/css/material-design-iconic-font.min.css') }}" rel="stylesheet" media="all">
 
     <!-- Bootstrap CSS-->
-    <link href="{{ asset('vendor/bootstrap-4.1/bootstrap.min.css') }}" rel="stylesheet" media="all">
+    {{-- <link href="{{ asset('vendor/bootstrap-4.1/bootstrap.min.css') }}" rel="stylesheet" media="all"> --}}
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet" media="all">
 
     <!-- Vendor CSS-->
     <link href="{{ asset('vendor/animsition/animsition.min.css') }}" rel="stylesheet" media="all">
-    <link href="{{ asset('vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet" media="all">
+    <link href="{{ asset('vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet"
+        media="all">
     <link href="{{ asset('vendor/wow/animate.css') }}" rel="stylesheet" media="all">
     <link href="{{ asset('vendor/css-hamburgers/hamburgers.min.css') }}" rel="stylesheet" media="all">
     <link href="{{ asset('vendor/slick/slick.css') }}" rel="stylesheet" media="all">
@@ -43,7 +45,7 @@
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
-                            <img src="images/icon/logo.png" alt="CoolAdmin" />
+                            <img src="{{ asset('img/iconpublicpage.png') }}" alt="" width="60%">
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -56,135 +58,19 @@
             <nav class="navbar-mobile">
                 <div class="container-fluid">
                     <ul class="navbar-mobile__list list-unstyled">
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
-                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li>
-                                    <a href="index.html">Dashboard 1</a>
-                                </li>
-                                <li>
-                                    <a href="index2.html">Dashboard 2</a>
-                                </li>
-                                <li>
-                                    <a href="index3.html">Dashboard 3</a>
-                                </li>
-                                <li>
-                                    <a href="index4.html">Dashboard 4</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="chart.html">
-                                <i class="fas fa-chart-bar"></i>Charts</a>
-                        </li>
-                        <li>
-                            <a href="table.html">
-                                <i class="fas fa-table"></i>Tables</a>
-                        </li>
-                        <li>
-                            <a href="form.html">
-                                <i class="far fa-check-square"></i>Forms</a>
-                        </li>
-                        <li>
-                            <a href="calendar.html">
-                                <i class="fas fa-calendar-alt"></i>Calendar</a>
-                        </li>
-                        <li>
-                            <a href="map.html">
-                                <i class="fas fa-map-marker-alt"></i>Maps</a>
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Pages</a>
-                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li>
-                                    <a href="login.html">Login</a>
-                                </li>
-                                <li>
-                                    <a href="register.html">Register</a>
-                                </li>
-                                <li>
-                                    <a href="forget-pass.html">Forget Password</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-desktop"></i>UI Elements</a>
-                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li>
-                                    <a href="button.html">Button</a>
-                                </li>
-                                <li>
-                                    <a href="badge.html">Badges</a>
-                                </li>
-                                <li>
-                                    <a href="tab.html">Tabs</a>
-                                </li>
-                                <li>
-                                    <a href="card.html">Cards</a>
-                                </li>
-                                <li>
-                                    <a href="alert.html">Alerts</a>
-                                </li>
-                                <li>
-                                    <a href="progress-bar.html">Progress Bars</a>
-                                </li>
-                                <li>
-                                    <a href="modal.html">Modals</a>
-                                </li>
-                                <li>
-                                    <a href="switch.html">Switchs</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grids</a>
-                                </li>
-                                <li>
-                                    <a href="fontawesome.html">Fontawesome Icon</a>
-                                </li>
-                                <li>
-                                    <a href="typo.html">Typography</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-        <!-- END HEADER MOBILE-->
-
-        <!-- MENU SIDEBAR-->
-        <aside class="menu-sidebar d-none d-lg-block">
-            <div class="logo">
-                <a href="#">
-                    <img src="img/icon/logo.png" alt="Cool Admin" />
-                </a>
-            </div>
-            <div class="menu-sidebar__content js-scrollbar1">
-                <nav class="navbar-sidebar2 navbar-sidebar3 py-4">
-                    <ul class="list-unstyled navbar__list">
                         <!-- Dashboard -->
-                        <li class="active has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="index.html">Dashboard 1</a>
-                                </li>
-                                <li>
-                                    <a href="index2.html">Dashboard 2</a>
-                                </li>
-                                <li>
-                                    <a href="index3.html">Dashboard 3</a>
-                                </li>
-                                <li>
-                                    <a href="index4.html">Dashboard 4</a>
-                                </li>
-                            </ul>
+                        <li class="@if (Route::is('dashboard')) active @endif has-sub">
+                            <a class="js-arrow" href="{{ Route('dashboard') }}">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard
+                            </a>
                         </li>
                         <!-- (Enterprise) Auto Parc -->
-                        <li class="has-sub">
+                        <li class=" @if (Route::is('dashboard-allvehicle') ||
+                            Route::is('dashboard-addvehicle') ||
+                            Route::is('dashboard-availablevehicle') ||
+                            Route::is('dashboard-breakvehicle') ||
+                            Route::is('dashboard-changestatevehicule') ||
+                            Route::is('dashboard-delvehicle')) active @endif has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-tachometer-alt"></i>Parc Auto
                                 <span class="arrow">
@@ -193,19 +79,27 @@
                             </a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="index.html">
+                                    <a href="{{ Route('dashboard-allvehicle') }}">
                                         <i class="fas fa-tachometer-alt"></i>Tous les véhicules</a>
                                 </li>
                                 <li>
-                                    <a href="index2.html">
+                                    <a href="{{ Route('dashboard-availablevehicle') }}">
                                         <i class="fas fa-tachometer-alt"></i>Véhicules disponibles</a>
                                 </li>
                                 <li>
-                                    <a href="index.html">
+                                    <a href="{{ Route('dashboard-breakvehicle') }}">
                                         <i class="fas fa-tachometer-alt"></i>Véhicules en panne</a>
                                 <li>
-                                    <a href="index.html">
-                                        <i class="fas fa-tachometer-alt"></i>Ajouter / Supprimer un véhicule</a>
+                                    <a href="{{ Route('dashboard-addvehicle') }}">
+                                        <i class="fas fa-tachometer-alt"></i>Ajouter un véhicule</a>
+                                </li>
+                                <li>
+                                    <a href="{{ Route('dashboard-changestatevehicule') }}">
+                                        <i class="fas fa-tachometer-alt"></i>Changer l'état d'un véhicule</a>
+                                </li>
+                                <li>
+                                    <a href="{{ Route('dashboard-delvehicle') }}">
+                                        <i class="fas fa-tachometer-alt"></i>Supprimer un véhicule</a>
                                 </li>
                             </ul>
                         </li>
@@ -229,6 +123,183 @@
                                 <li>
                                     <a href="index3.html">
                                         <i class="fas fa-tachometer-alt"></i>Faire une demande de paie</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- (Enterprise) Agencies -->
+                        <li class=" @if (Route::is('dashboard-allagencies') || Route::is('dashboard-addagency') || Route::is('dashboard-delagency')) active @endif has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-tachometer-alt"></i>Nos agences
+                                <span class="arrow">
+                                    <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="{{ Route('dashboard-allagencies') }}">
+                                        <i class="fas fa-tachometer-alt"></i>Toutes les agences</a>
+                                </li>
+                                <li>
+                                    <a href="{{ Route('dashboard-addagency') }}">
+                                        <i class="fas fa-tachometer-alt"></i>Ajoutez une agence</a>
+                                </li>
+                                <li>
+                                    <a href="{{ Route('dashboard-delagency') }}">
+                                        <i class="fas fa-tachometer-alt"></i>Supprimer une agence</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- (Admin) Payements -->
+                        <li class=" @if (Route::is('dashboard-askpayment') || Route::is('dashboard-donepayment')) active @endif has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-tachometer-alt"></i>Versements "admin"
+                                <span class="arrow">
+                                    <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="{{ Route('dashboard-askpaymentadmin') }}">
+                                        <i class="fas fa-tachometer-alt"></i>Voir les demandes</a>
+                                </li>
+                                <li>
+                                    <a href="{{ Route('dashboard-donepaymentadmin') }}">
+                                        <i class="fas fa-tachometer-alt"></i>Versements effectués</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- (Admin) Account management-->
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-tachometer-alt"></i>Gérer les comptes
+                                <span class="arrow">
+                                    <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="index.html">
+                                        <i class="fas fa-tachometer-alt"></i>Administrateurs</a>
+                                </li>
+                                <li>
+                                    <a href="index2.html">
+                                        <i class="fas fa-tachometer-alt"></i>Entreprises</a>
+                                </li>
+                                <li>
+                                    <a href="index3.html">
+                                        <i class="fas fa-tachometer-alt"></i>Clients</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Parameters-->
+                        <li>
+                            <a href="form.html">
+                                <i class="far fa-check-square"></i>Paramètres </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href="#">
+                    <img src="{{ asset('img/iconpublicpage.png') }}" alt="" width="60%">
+                </a>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar2 navbar-sidebar3 py-4">
+                    <ul class="list-unstyled navbar__list">
+                        <!-- Dashboard -->
+                        <li class="@if (Route::is('dashboard')) active @endif has-sub">
+                            <a class="js-arrow" href="{{ Route('dashboard') }}">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard
+                            </a>
+                        </li>
+                        <!-- (Enterprise) Auto Parc -->
+                        <li class=" @if (Route::is('dashboard-allvehicle') ||
+                            Route::is('dashboard-addvehicle') ||
+                            Route::is('dashboard-availablevehicle') ||
+                            Route::is('dashboard-breakvehicle') ||
+                            Route::is('dashboard-changestatevehicule') ||
+                            Route::is('dashboard-delvehicle')) active @endif has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-tachometer-alt"></i>Parc Auto
+                                <span class="arrow">
+                                    <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="{{ Route('dashboard-allvehicle') }}">
+                                        <i class="fas fa-tachometer-alt"></i>Tous les véhicules</a>
+                                </li>
+                                <li>
+                                    <a href="{{ Route('dashboard-availablevehicle') }}">
+                                        <i class="fas fa-tachometer-alt"></i>Véhicules disponibles</a>
+                                </li>
+                                <li>
+                                    <a href="{{ Route('dashboard-breakvehicle') }}">
+                                        <i class="fas fa-tachometer-alt"></i>Véhicules en panne</a>
+                                <li>
+                                    <a href="{{ Route('dashboard-addvehicle') }}">
+                                        <i class="fas fa-tachometer-alt"></i>Ajouter un véhicule</a>
+                                </li>
+                                <li>
+                                    <a href="{{ Route('dashboard-changestatevehicule') }}">
+                                        <i class="fas fa-tachometer-alt"></i>Changer l'état d'un véhicule</a>
+                                </li>
+                                <li>
+                                    <a href="{{ Route('dashboard-delvehicle') }}">
+                                        <i class="fas fa-tachometer-alt"></i>Supprimer un véhicule</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- (Enterprise) Results and payments -->
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-tachometer-alt"></i>Bilan et Payements
+                                <span class="arrow">
+                                    <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="index.html">
+                                        <i class="fas fa-tachometer-alt"></i>Voir les activités</a>
+                                </li>
+                                <li>
+                                    <a href="index2.html">
+                                        <i class="fas fa-tachometer-alt"></i>Payments effectués</a>
+                                </li>
+                                <li>
+                                    <a href="index3.html">
+                                        <i class="fas fa-tachometer-alt"></i>Faire une demande de paie</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- (Enterprise) Agencies -->
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-tachometer-alt"></i>Nos agences
+                                <span class="arrow">
+                                    <i class="fas fa-angle-down"></i>
+                                </span>
+                            </a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="{{ Route('dashboard-allagencies') }}">
+                                        <i class="fas fa-tachometer-alt"></i>Toutes les agences</a>
+                                </li>
+                                <li>
+                                    <a href="{{ Route('dashboard-addagency') }}">
+                                        <i class="fas fa-tachometer-alt"></i>Ajoutez une agence</a>
+                                </li>
+                                <li>
+                                    <a href="{{ Route('dashboard-delagency') }}">
+                                        <i class="fas fa-tachometer-alt"></i>Supprimer une agence</a>
                                 </li>
                             </ul>
                         </li>
@@ -419,7 +490,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="img/icon/avatar-01.jpg" alt="John Doe" />
+                                            <img src="{{ asset('img/icon/avatar-01.jpg') }}" alt="John Doe" />
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#">john doe</a>
@@ -428,7 +499,8 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="{{ asset('img/icon/avatar-01.jpg') }}" alt="John Doe" />
+                                                        <img src="{{ asset('img/icon/avatar-01.jpg') }}"
+                                                            alt="John Doe" />
                                                     </a>
                                                 </div>
                                                 <div class="content">

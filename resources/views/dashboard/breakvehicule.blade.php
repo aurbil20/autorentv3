@@ -4,7 +4,7 @@
     <div class="row m-4">
         <div class="col-md-12">
             <div class="text-center pb-4">
-                <h3> Tous les véhcules</h3>
+                <h3> Tous les véhcules en panne</h3>
             </div>
             <div class="col-md-8 ">
                 <div class="row gap-3">
@@ -62,7 +62,7 @@
                                 <button class="btn btn-primary" data-toggle="dropdown"
                                     aria-expanded="false"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Signaler en panne</a>
+                                    <a class="dropdown-item" href="#">Rendre disponible</a>
                                     <a class="dropdown-item" href="#">Supprimer</a>
                                 </div>
                             </td>

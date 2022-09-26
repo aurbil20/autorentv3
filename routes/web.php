@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\DoReservation;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,21 +37,73 @@ Route::get('/login', function () {
     return view('publicpages.login');
 })->name('login');
 
+Route::get('/doreservation', function () {
+    return view('publicpages.doreservation');
+})->name('doreservation');
+
 Route::get('/aboutus', function () {
     return view('publicpages.aboutus');
 })->name('aboutus');
 
 
 
-
-
-
 // Dashboard Interfaces 
-
+    //Dashboard 
 Route::get('/dash', function () {
     return view('dashboard.index');
 })->name('dashboard');
 
-Route::get('/dash/vehicule', function () {
-    return view('dashboard.vehicule');
-})->name('dashoboard-allvehicle');
+    // See all vehicles
+Route::get('/dash/allvehicule', function () {
+    return view('dashboard.allvehicle');
+})->name('dashboard-allvehicle');
+
+    // Add a vehicle
+Route::get('/dash/addvehicule', function () {
+    return view('dashboard.addvehicle');
+})->name('dashboard-addvehicle');
+
+    // See all available vehicle
+Route::get('/dash/availablevehicule', function () {
+    return view('dashboard.availablevehicle');
+})->name('dashboard-availablevehicle');
+
+    // See all broken down vehicle
+Route::get('/dash/breakvehicule', function () {
+    return view('dashboard.breakvehicule');
+})->name('dashboard-breakvehicle');
+
+    // Change véhicule State
+Route::get('/dash/changestatevehicule', function () {
+    return view('dashboard.changestatevehicle');
+})->name('dashboard-changestatevehicule');
+
+    // Remove vehicle
+Route::get('/dash/delvehicle', function () {
+    return view('dashboard.delvehicle');
+})->name('dashboard-delvehicle');
+
+    // See all agencies
+Route::get('/dash/allagencies', function () {
+    return view('dashboard.allagencies');
+})->name('dashboard-allagencies');
+
+    // Add agency
+Route::get('/dash/addagencies', function () {
+    return view('dashboard.addagency');
+})->name('dashboard-addagency');
+
+    // Remove agency
+Route::get('/dash/delagency', function () {
+    return view('dashboard.delagency');
+})->name('dashboard-delagency');
+
+    // See asked Payments
+Route::get('/dash/askpaymentadmin', function () {
+    return view('dashboard.askpaymentadmin');
+})->name('dashboard-askpaymentadmin');
+
+    // See done payments
+Route::get('/dash/donepaymentadmin', function () {
+    return view('dashboard.donepaymentadmin');
+})->name('dashboard-donepaymentadmin');

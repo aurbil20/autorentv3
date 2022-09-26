@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <title> {{ Route::currentRouteName() }}</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -38,9 +38,9 @@
                     <div class="d-inline-flex align-items-center">
                         <a class="text-dark" href="">FAQs</a>
                         <span class="text-muted px-2">|</span>
-                        <a class="text-dark" href="">Help</a>
-                        <span class="text-muted px-2">|</span>
-                        <a class="text-dark" href="">Support</a>
+                        <a class="text-dark" href="">Aide </span>
+                            <span class="text-muted px-2">|</span>
+                            <a class="text-dark" href="">Assistance</a>
                     </div>
                 </div>
                 <div class="col-lg-6 text-center text-lg-right">
@@ -68,8 +68,7 @@
         <div class="row align-items-center py-3 px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
                 <a href="" class="text-decoration-none">
-                    <h1 class="m-0 display-5 font-weight-semi-bold"><span
-                            class="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper</h1>
+                    <img src="{{ asset('img/iconpublicpage.png') }}" alt="" width="60%">
                 </a>
             </div>
 
@@ -77,7 +76,7 @@
                 @if (!(Route::is('login') || Route::is('register')))
                     <form action="">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search for products">
+                            <input type="text" class="form-control" placeholder="Rechercher un véhicule">
                             <div class="input-group-append">
                                 <span class="input-group-text bg-transparent text-primary">
                                     <i class="fa fa-search"></i>
@@ -90,29 +89,20 @@
 
 
             <div class="col-lg-3 col-6 text-right ">
-                @if (!(Route::is('login') || Route::is('register')))
-                    <a href="" class="btn border">
-                        <i class="fas fa-heart text-primary"></i>
-                        <span class="badge">0</span>
-                    </a>
-                    <a href="" class="btn border">
-                        <i class="fas fa-shopping-cart text-primary"></i>
-                        <span class="badge">0</span>
-                    </a>
-                @endif
                 @if (!Route::is('home'))
-                    <a href="{{ Route('home') }}" class="btn border">Home </a>
+                    <a href="{{ Route('home') }}" class="btn border">Accueil </a>
                 @endif
                 @if (!Route::is('login'))
-                    <a href="{{ Route('login') }}" class="btn border">Login </a>
+                    <a href="{{ Route('login') }}" class="btn border">Mon profil</a>
                 @endif
                 @if (!Route::is('register'))
-                    <a href="{{ Route('register') }}" class="btn border">Register </a>
+                    {{-- <a href="{{ Route('register') }}" class="btn border">Inscription </a> --}}
                 @endif
             </div>
         </div>
     </div>
     <!-- Topbar End -->
+
 
     @yield('content')
 
@@ -120,76 +110,46 @@
     <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
         @if (!(Route::is('login') || Route::is('register')))
             <div class="row px-xl-5 pt-5">
-                <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
+                <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5 pb-3">
                     <a href="" class="text-decoration-none">
-                        <h1 class="mb-4 display-5 font-weight-semi-bold"><span
-                                class="text-primary font-weight-bold border border-white px-3 mr-1">E</span>Shopper
-                        </h1>
+                        <img src="{{ asset('img/iconpublicpage.png') }}" alt="" width="60%">
                     </a>
                     <p>Dolore erat dolor sit lorem vero amet. Sed sit lorem magna, ipsum no sit erat lorem et magna
                         ipsum
                         dolore amet erat.</p>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street, New York, USA
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>Rue 1208, Cotonou , Bénin
                     </p>
                     <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@example.com</p>
-                    <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890</p>
+                    <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+229 6xxxxxxx</p>
                 </div>
                 <div class="col-lg-8 col-md-12">
                     <div class="row">
                         <div class="col-md-4 mb-5">
-                            <h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>
+                            <h5 class="font-weight-bold text-dark mb-4">Liens Rapides</h5>
                             <div class="d-flex flex-column justify-content-start">
-                                <a class="text-dark mb-2" href="index.html"><i
-                                        class="fa fa-angle-right mr-2"></i>Home</a>
-                                <a class="text-dark mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Our
-                                    Shop</a>
-                                <a class="text-dark mb-2" href="detail.html"><i
-                                        class="fa fa-angle-right mr-2"></i>Shop
-                                    Detail</a>
-                                <a class="text-dark mb-2" href="cart.html"><i
-                                        class="fa fa-angle-right mr-2"></i>Shopping
-                                    Cart</a>
-                                <a class="text-dark mb-2" href="checkout.html"><i
-                                        class="fa fa-angle-right mr-2"></i>Checkout</a>
+                                <a class="text-dark mb-2" href="{{ Route('home') }}"><i
+                                        class="fa fa-angle-right mr-2"></i>Accueil</a>
+                                <a class="text-dark mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Catalogue</a>
+                                <a class="text-dark mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>A
+                                    propos de nous</a>
                                 <a class="text-dark" href="contact.html"><i
-                                        class="fa fa-angle-right mr-2"></i>Contact
-                                    Us</a>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-5">
-                            <h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>
-                            <div class="d-flex flex-column justify-content-start">
-                                <a class="text-dark mb-2" href="index.html"><i
-                                        class="fa fa-angle-right mr-2"></i>Home</a>
-                                <a class="text-dark mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Our
-                                    Shop</a>
-                                <a class="text-dark mb-2" href="detail.html"><i
-                                        class="fa fa-angle-right mr-2"></i>Shop
-                                    Detail</a>
-                                <a class="text-dark mb-2" href="cart.html"><i
-                                        class="fa fa-angle-right mr-2"></i>Shopping
-                                    Cart</a>
-                                <a class="text-dark mb-2" href="checkout.html"><i
-                                        class="fa fa-angle-right mr-2"></i>Checkout</a>
-                                <a class="text-dark" href="contact.html"><i
-                                        class="fa fa-angle-right mr-2"></i>Contact
-                                    Us</a>
+                                        class="fa fa-angle-right mr-2"></i>Contactez nous
+                                </a>
                             </div>
                         </div>
                         <div class="col-md-4 mb-5">
                             <h5 class="font-weight-bold text-dark mb-4">Newsletter</h5>
                             <form action="">
                                 <div class="form-group">
-                                    <input type="text" class="form-control border-0 py-4" placeholder="Your Name"
+                                    <input type="text" class="form-control border-0 py-4" placeholder="Votre Nom"
                                         required="required" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control border-0 py-4" placeholder="Your Email"
+                                    <input type="email" class="form-control border-0 py-4" placeholder="Votre email"
                                         required="required" />
                                 </div>
                                 <div>
-                                    <button class="btn btn-primary btn-block border-0 py-3" type="submit">Subscribe
-                                        Now</button>
+                                    <button class="btn btn-primary btn-block border-0 py-3" type="submit">Souscrire</button>
                                 </div>
                             </form>
                         </div>
@@ -202,7 +162,7 @@
             <div class="col-md-6 px-xl-0">
                 <p class="mb-md-0 text-center text-center text-dark">
                     &copy; <a class="text-dark font-weight-semi-bold" href="#">AutoRent</a>. All Rights
-                    Reserved. Designed by @aurel000
+                    Reserved. Designed by 
                 </p>
             </div>
             @if (!(Route::is('login') || Route::is('register')))
