@@ -312,25 +312,26 @@
                 <div class="d-flex align-content-center flex-wrap">
                     <div class="col-10">
                         <h5 class="font-weight-bold text-dark mb-3">Laissez un commentaire </h5>
-                        <form>
+                        <form action="{{ Route('comment') }}" method="POST">
+                            @csrf
                             <div class="row">
                                 <div class="col form-group">
                                     <label for="FormControlInput1">Votre nom</label>
-                                    <input class="form-control" type="text" placeholder="Nom ">
+                                    <input class="form-control" type="text" placeholder="Nom " name="name">
                                 </div>
                                 <div class="col form-group">
                                     <label for="FormControlInput1">Votre prénom</label>
-                                    <input class="form-control" type="text" placeholder="Prénom ">
+                                    <input class="form-control" type="text" placeholder="Prénom " name="fname">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="FormControlInput1">Email address</label>
                                 <input type="email" class="form-control" id="FormControlInput1"
-                                    placeholder="name@example.com">
+                                    placeholder="name@example.com" name="email">
                             </div>
                             <div class="form-group">
                                 <label for="FormControlTextarea1">Votre commentaire :</label>
-                                <textarea class="form-control" id="FormControlTextarea1" rows="3" placeholder="Commentaire"></textarea>
+                                <textarea class="form-control" id="FormControlTextarea1" rows="3" placeholder="Commentaire" name="comment"></textarea>
                             </div>
                             <div class="input-group-append">
                                 <button class="btn btn-primary px-4">Envoyer</button>

@@ -13,4 +13,21 @@
 - les couleurs de la page public ont été adaptées au dashboard 
 - les pages de gestion des utilisateurs n'ont pas encore été faits 
 - il y a des modals qui n'ont pas été fait dans certaines pages 
-- certains tableaux et formulaires n'ont pas encore été détaché en tant que composants livewire
+- certains tableaux et formulaires n'ont pas encore été détaché en tant que composants livewire 
+
+----- Commit 4 
+
+- Installation de fortify 
+- retrait suppresion des composants livewire au niveau de login 
+- definition des regles de validation des form avec jquery dans public/js/validationForm.js
+- ajout de FortifyServiceProviders dans config/app
+- liaison de fortify au formulaire login et register dans app/providers/FortifyServiceProviders.php 
+- creation de la migration table role 
+- creation de la migration pour ajouter la foreignId de la table role à la table users 
+- ajout des colonnes à la table users
+- test de connexion (login réussi)
+- parametrage pour register pas fait (à revoir au prochain commit )
+- Regle de validation dans public/js/validationForm.js pour le register form (à revoir dans le prochain commit)
+- Migration des tables restantes
+- controller d'insertion de commentaire fait 
+- creation du fichier du fichier livewire pour all vehicule dans le dash 

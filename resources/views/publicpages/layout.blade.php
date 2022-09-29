@@ -9,7 +9,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link rel="icon" type="image/x-icon" href="{{ asset('img/icon/iconar.ico') }}">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -89,14 +89,32 @@
 
 
             <div class="col-lg-3 col-6 text-right ">
-                @if (!Route::is('home'))
-                    <a href="{{ Route('home') }}" class="btn border">Accueil </a>
-                @endif
-                @if (!Route::is('login'))
-                    <a href="{{ Route('login') }}" class="btn border">Mon profil</a>
-                @endif
-                @if (!Route::is('register'))
-                    {{-- <a href="{{ Route('register') }}" class="btn border">Inscription </a> --}}
+                @if (!Auth::user())
+                    @if (!Route::is('home'))
+                        <a href="{{ Route('home') }}" class="btn border">Accueil </a>
+                    @endif
+                    @if (!Route::is('login'))
+                        <a href="{{ Route('login') }}" class="btn border">Se connecter</a>
+                    @endif
+                    @if (!Route::is('register'))
+                        <a href="{{ Route('register') }}" class="btn border">Inscription </a>
+                    @endif
+                @else
+                    <div class="d-flex justify-content-end">
+                        <div class="dropdown">
+                            
+                            <a class=" dropdown-toggle" type="button" data-toggle="dropdown">
+                                <img src="{{ asset('img/icon/avatar-01.jpg') }}" width="50px" class="rounded-circle mx-3" alt="{{ Auth::user()->name }}" />
+                                {{ Auth::user()->name }}
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">My account</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ Route('logout') }}">Logout</a>
+                            </div>
+                        </div>
+                    </div>
                 @endif
             </div>
         </div>
@@ -129,7 +147,8 @@
                             <div class="d-flex flex-column justify-content-start">
                                 <a class="text-dark mb-2" href="{{ Route('home') }}"><i
                                         class="fa fa-angle-right mr-2"></i>Accueil</a>
-                                <a class="text-dark mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Catalogue</a>
+                                <a class="text-dark mb-2" href="shop.html"><i
+                                        class="fa fa-angle-right mr-2"></i>Catalogue</a>
                                 <a class="text-dark mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>A
                                     propos de nous</a>
                                 <a class="text-dark" href="contact.html"><i
@@ -145,11 +164,12 @@
                                         required="required" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control border-0 py-4" placeholder="Votre email"
-                                        required="required" />
+                                    <input type="email" class="form-control border-0 py-4"
+                                        placeholder="Votre email" required="required" />
                                 </div>
                                 <div>
-                                    <button class="btn btn-primary btn-block border-0 py-3" type="submit">Souscrire</button>
+                                    <button class="btn btn-primary btn-block border-0 py-3"
+                                        type="submit">Souscrire</button>
                                 </div>
                             </form>
                         </div>
@@ -162,7 +182,7 @@
             <div class="col-md-6 px-xl-0">
                 <p class="mb-md-0 text-center text-center text-dark">
                     &copy; <a class="text-dark font-weight-semi-bold" href="#">AutoRent</a>. All Rights
-                    Reserved. Designed by 
+                    Reserved. Designed by
                 </p>
             </div>
             @if (!(Route::is('login') || Route::is('register')))
@@ -189,6 +209,13 @@
     <!-- Contact Javascript File -->
     <script src="mail/jqBootstrapValidation.min.js"></script>
     <script src="mail/contact.js"></script>
+
+    <!-- Jquery validation libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/additional-methods.js"></script>
+    <script src="{{ asset('js/validationForm.js') }}"></script>
+    <script></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>

@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\DoReservation;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CommentaireController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,13 +30,13 @@ Route::get('/detail', function () {
     return view('publicpages.detail');
 })->name('detail');
 
-Route::get('/register', function () {
-    return view('publicpages.register');
-})->name('register');
+// Route::get('/register', function () {
+//     return view('publicpages.register');
+// })->name('register');
 
-Route::get('/login', function () {
-    return view('publicpages.login');
-})->name('login');
+// Route::get('/login', function () {
+//     return view('publicpages.login');
+// })->name('login');
 
 Route::get('/doreservation', function () {
     return view('publicpages.doreservation');
@@ -45,6 +46,9 @@ Route::get('/aboutus', function () {
     return view('publicpages.aboutus');
 })->name('aboutus');
 
+
+    // To do comment
+Route::post('/post', [CommentaireController::class, 'store'])->name('comment');
 
 
 // Dashboard Interfaces 
