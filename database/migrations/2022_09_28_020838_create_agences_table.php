@@ -16,9 +16,7 @@ return new class extends Migration
         Schema::create('agences', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('manager');
-            $table->integer('numtel');
-            $table->double('solde');
+            $table->double('solde')->nullable();
             $table->timestamps();
 
             $table->foreignId('user_id')->constrained('users');

@@ -3,9 +3,10 @@
 namespace App\Actions\Fortify;
 
 use App\Models\User;
+use Illuminate\Validation\Rule;
+use Laravel\Fortify\Rules\Password;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 
 class CreateNewUser implements CreatesNewUsers
@@ -20,18 +21,14 @@ class CreateNewUser implements CreatesNewUsers
      */
     public function create(array $input)
     {
-         //dd($input);
-
-        // Model 
-
-       // dd("testons");
 
         if ($input['role'] == "2") {
             // Enterprise validation
+
             Validator::make($input, [
                 'name' => ['required', 'string', 'max:255'],
-                'dreason' => ['required', 'string', 'max:255'],
-                'numifu' => ['required', 'integer', 'max:255'],
+                'dreason' => ['required', 'string'],
+                'numifu' => ['required', 'integer', 'min:13'],
                 'nameManager' => ['required', 'string', 'max:255'],
                 'fnameManager' => ['required', 'string', 'max:255'],
                 'email' => [
@@ -41,10 +38,9 @@ class CreateNewUser implements CreatesNewUsers
                     'max:255',
                     Rule::unique(User::class),
                 ],
-                'numtel' => ['required', 'string', 'max:255'],
-                'password' => ['required', 'min:8'],
-                // 'confirmPassword' => ['required', 'same:password'],
-                // 'password' => $this->passwordRules(),
+                'numtel' => ['required','string','min:8'],
+                'password' => ['required', 'confirmed', 'min:8'],
+                
             ])->validate();
 
             return User::create([
@@ -53,19 +49,16 @@ class CreateNewUser implements CreatesNewUsers
                 'numifu' => $input['numifu'],
                 'name_manager'  => $input['nameManager'],
                 'fname_manager'  => $input['fnameManager'],
-                'email' => [
-                    'required',
-                    'string',
-                    'email',
-                    'max:255',
-                    Rule::unique(User::class),
-                ],
+                'email' => $input['email'],
                 'numtel' => $input['numtel'],
+                'solde' => 0, 
                 'role_id' => $input['role'],
                 'password' => Hash::make($input['password']),
             ]);
         } elseif ($input['role'] == "3") {
-             //dd($input);
+
+            // Client validation
+
             Validator::make($input, [
                 'name' => ['required', 'string', 'max:255'],
                 'fname' => ['required', 'string', 'max:255'],
@@ -76,14 +69,14 @@ class CreateNewUser implements CreatesNewUsers
                     'max:255',
                     Rule::unique(User::class),
                 ],
-                'old_date' => ['required', 'string', 'max:255'],
-                'sex' => ['required', 'string', 'max:255'],
-                'numtel' => ['required', 'integer', 'max:255'],
+                'old_date' => ['required', 'date' ],
+                'sex' => ['required', 'string'],
+                'numtel' => ['required', 'string'],
+                'solde' => 0,
                 'password' => ['required', 'confirmed', 'min:8'],
-               //'password_confirmation' => ['required'],
-                // 'password' => $this->passwordRules(),
-            ])->validate;
-            dd($input);
+            ])->validate();
+
+
             return User::create([
                 'name' => $input['name'],
                 'fname' => $input['fname'],

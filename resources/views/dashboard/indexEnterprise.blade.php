@@ -8,23 +8,23 @@
     <div class="row gap-3 mx-4 my-1 py-2">
         <div class="col bg-light p-4 mx-2 rounded">
             <h4 class="">Balance :</h4> <br>
-            <h5 >100$</h5>
+            <h5 >{{ Auth::user()->solde }}</h5>
         </div>
         <div class="col bg-light p-4 mx-2 rounded">
             <h4 class="">Nombres d'agences :</h4> <br>
-            <h5>100</h5>
+            <h5>{{ $numberagences }}</h5>
         </div>
         <div class="col bg-light p-4 mx-2 rounded">
             <h4 class="">Nombres de véhicules réservés :</h4> <br>
-            <h5>100</h5>
+            <h5>{{ $numbervehiclesused }}</h5>
         </div>
         <div class="col bg-light p-4 mx-2 rounded">
             <h4 class="">Nombres de véhicules disponible :</h4> <br>
-            <h5>100</h5>
+            <h5>{{ $numbervehiclesavalaible }}</h5>
         </div>
         <div class="col bg-light p-4 mx-2 rounded">
             <h4 class="">Nombres de véhicules total : </h4> <br>
-            <h5>100</h5>
+            <h5>{{ $numbervehicles }}</h5>
         </div>
     </div>
 

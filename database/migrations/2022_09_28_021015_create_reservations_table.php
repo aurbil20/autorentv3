@@ -20,6 +20,7 @@ return new class extends Migration
             $table->date('datesave');
             $table->date('dateedit');
             $table->integer('period');
+            $table->string('transaction_id');
             $table->boolean('driver');
             $table->timestamps();
 

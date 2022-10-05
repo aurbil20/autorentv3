@@ -1,11 +1,12 @@
 @extends('publicpages.layout')
 
 @section('content')
-<!-- Navbar Start -->
+    <!-- Navbar Start -->
     <div class="container-fluid">
         <div class="row border-top px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
-                <a class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
+                <a class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100"
+                    data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
                     <h6 class="m-0">Categories</h6>
                     <i class="fa fa-angle-down text-dark"></i>
                 </a>
@@ -68,5 +69,9 @@
     </div>
     <!-- Page Header End -->
     @livewire('do-reservation')
+@endsection
+
+@section('others_scripts')
     
+ <script src="https://cdn.kkiapay.me/k.js"></script>
 @endsection

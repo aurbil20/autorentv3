@@ -28,7 +28,7 @@
                     <div id="clientdiv" class="py-3">
                         <form id="registerclient" action="{{ Route('register') }}" method="POST">
                             @csrf
-                            <input type="text" name="role" value="3" style="display: none">
+                            <input type="hidden" name="role" value="3">
                             <div class="form-group">
                                 <label for="InputName">Nom </label>
                                 <input type="text" class="form-control" id="name" name="name">
@@ -72,8 +72,8 @@
                                 </div>
                                 <div class="col form-group">
                                     <label for="InputEmail1">N° Téléphone</label>
-                                    <input type="number" class="form-control" id="numTel" name="numtel">
-                                    @error('numTel')
+                                    <input type="text" class="form-control" id="numTel" name="numtel">
+                                    @error('numtel')
                                         <span class="error">{{ $message }}</span>
                                     @enderror
                                 </div>
@@ -159,23 +159,21 @@
                             </div>
                             <div class="form-group">
                                 <label for="InputEmail1">N° Téléphone</label>
-                                <input type="text" class="form-control" id="numTel" name="numTel">
+                                <input type="text" class="form-control" id="numTel" name="numtel">
                                 @error('numTel')
                                     <span class="error">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label for="InputPassword1">Password</label>
-                                <input type="password" class="form-control" placeholder="*********" 
-                                    name="password">
+                                <input type="password" class="form-control" placeholder="*********" name="password">
                                 @error('password')
                                     <span class="error">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label for="InputPassword1">Confirm Password</label>
-                                <input type="password" class="form-control" placeholder="" 
-                                    name="password_confirmation">
+                                <input type="password" class="form-control" placeholder="" name="password_confirmation">
                                 @error('password_confirmation')
                                     <span class="error">{{ $message }}</span>
                                 @enderror
@@ -194,3 +192,4 @@
         </div>
     </div>
 @endsection
+

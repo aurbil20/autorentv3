@@ -31,3 +31,19 @@
 - Migration des tables restantes
 - controller d'insertion de commentaire fait 
 - creation du fichier du fichier livewire pour all vehicule dans le dash 
+
+
+
+----- Commit 5 
+- affichage des véhicules dans le dash (pas fini)
+- paramétrage de la page register fini 
+- Controller marque et modéle fait 
+- ajout des images de logo de véhicules dans le fichier index de publicpages 
+- Fonctionnalités ajout d'une agence faite et fonctionnelle 
+- Jointure de allagencies à finir !!!!!!------
+
+- Suppresion livewire allvehicules 
+- Ajout d'un composant livewire removeagency et ecriture 
+- Relations entre les tables définies dans le model 
+- Création de middleware personnalisé et intégration aux routes 
+- Edition des pages de gestion des utilisateurs 

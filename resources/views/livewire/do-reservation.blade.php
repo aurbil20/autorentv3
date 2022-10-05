@@ -12,19 +12,19 @@
                         </div>
                         <div class="col-md-6 form-group">
                             <label>Nom </label>
-                            <input class="form-control" type="text" placeholder="John" disabled>
+                            <input class="form-control" type="text" value="{{ Auth::user()->name }}" disabled>
                         </div>
                         <div class="col-md-6 form-group">
                             <label>Prénom</label>
-                            <input class="form-control" type="text" placeholder="Doe" disabled>
+                            <input class="form-control" type="text" value="{{ Auth::user()->fname }}" disabled>
                         </div>
                         <div class="col-md-6 form-group">
                             <label>E-mail</label>
-                            <input class="form-control" type="text" placeholder="example@email.com" disabled>
+                            <input class="form-control" type="text" value="{{ Auth::user()->email }}" disabled>
                         </div>
                         <div class="col-md-6 form-group">
                             <label>No Télephone</label>
-                            <input class="form-control" type="text" placeholder="+22960000000" disabled>
+                            <input class="form-control" type="text" value="{{ Auth::user()->numtel }}" disabled>
                         </div>
                         <div class="col-md-8">
                             <hr>
@@ -46,10 +46,10 @@
                                 </thead>
                                 <tbody class="align-middle">
                                     <tr>
-                                        <td class="align-middle"><img src="img/product-1.jpg" alt=""
+                                        <td class="align-middle"><img src="{{ asset('img/imgimg.png') }}" alt=""
                                                 style="width: 150px;"></td>
-                                        <td class="align-middle">Marque 0</td>
-                                        <td class="align-middle">Modele 0</td>
+                                        <td class="align-middle">{{ $marque->name }}</td>
+                                        <td class="align-middle">{{ $modele->name }}</td>
                                         <td class="align-middle">$150</td>
                                         <td class="align-middle">$150</td>
                                         <td class="align-middle">$150</td>
@@ -70,7 +70,7 @@
                             <h4>Période et montant de réservation</h4>
                         </div>
                         <div class="col-md-5 form-group">
-                            <label >Type de périodicité </label>
+                            <label>Type de périodicité </label>
                             <select class="form-control">
                                 <option>Horaire</option>
                                 <option>Journalière</option>
@@ -79,7 +79,7 @@
                             </select>
                         </div>
                         <div class="col-md-2 form-group">
-                            <label>Périodicité  </label>
+                            <label>Périodicité </label>
                             <input class="form-control" type="text">
                         </div>
                         <div class="col-md-5 form-group">
@@ -118,7 +118,12 @@
                             <hr>
                         </div>
                         <div class="col-md-6 py-4">
-                            <button class="btn btn-primary">Passer au paiement</button>
+                            <kkiapay-widget amount="<montant-a-preleve-chez-le-client>" key="<votre-api-key>"
+                                url="<url-vers-votre-logo>" position="center" sandbox="true" data=""
+                                callback="<url-de-redirection-quand-lepaiement-est-reuissi>"> Passez au paiement
+                            </kkiapay-widget>
+
+                            
                         </div>
                     </div>
                 </div>

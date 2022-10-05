@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('year');
             $table->timestamps();
 
-            $table->foreignId('marquevehicule_id')->constrained('marque_vehicules');
+            $table->foreignId('marque_vehicule_id')->constrained('marque_vehicules');
         });
     }
 

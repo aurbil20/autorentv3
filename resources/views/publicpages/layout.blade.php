@@ -108,6 +108,11 @@
                                 {{ Auth::user()->name }}
                             </a>
                             <div class="dropdown-menu">
+                                @if (Auth::user()->role_id==1)
+                                    <a class="dropdown-item" href="{{ Route('dashboard-admin') }}">My dashboard</a>
+                                    @elseif (Auth::user()->role_id==2)
+                                <a class="dropdown-item" href="{{ Route('dashboard-enterprise') }}">My dashboard</a>
+                                @endif
                                 <a class="dropdown-item" href="#">My account</a>
                                 <a class="dropdown-item" href="#">Another action</a>
                                 <div class="dropdown-divider"></div>
@@ -222,6 +227,8 @@
 
     <!-- Livewire scripts-->
     @livewireScripts
+
+    @yield('others_scripts')
 </body>
 
 </html>

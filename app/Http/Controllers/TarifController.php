@@ -6,5 +6,7 @@ use Illuminate\Http\Request;
 
 class TarifController extends Controller
 {
-    //
+    // 
+    
 }
+
