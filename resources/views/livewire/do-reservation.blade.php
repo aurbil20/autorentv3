@@ -39,9 +39,16 @@
                                         <th>Images</th>
                                         <th>Marque</th>
                                         <th>Modèle</th>
-                                        <th>Tarif jour</th>
-                                        <th>Tarif semaine</th>
-                                        <th>Tarif mois</th>
+                                        <!--
+                                            Display according to the number of tariffs defined
+                                        -->
+                                        @foreach ($periodicites as $periodicite)
+                                            @foreach ($tarifs as $tarif)
+                                                @if ($tarif->periodicite_id == $periodicite->id)
+                                                    <th>{{ $periodicite->designation }}</th>
+                                                @endif
+                                            @endforeach
+                                        @endforeach
                                     </tr>
                                 </thead>
                                 <tbody class="align-middle">
@@ -50,16 +57,23 @@
                                                 style="width: 150px;"></td>
                                         <td class="align-middle">{{ $marque->name }}</td>
                                         <td class="align-middle">{{ $modele->name }}</td>
-                                        <td class="align-middle">$150</td>
-                                        <td class="align-middle">$150</td>
-                                        <td class="align-middle">$150</td>
+                                        <!--
+                                            Display according to the number of tariffs defined
+                                        -->
+                                        @foreach ($periodicites as $periodicite)
+                                            @foreach ($tarifs as $tarif)
+                                                @if ($tarif->periodicite_id == $periodicite->id)
+                                                    <th>{{ $tarif->price }}</th>
+                                                @endif
+                                            @endforeach
+                                        @endforeach
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                         <div class="col-md-8">
                             <div class="form-group form-check">
-                                <input type="checkbox" class="form-check-input">
+                                <input type="checkbox" class="form-check-input" wire:model='okdriver'>
                                 <label class="form-check-label">Je veux un chauffeur</label>
                             </div>
                         </div>
@@ -71,20 +85,24 @@
                         </div>
                         <div class="col-md-5 form-group">
                             <label>Type de périodicité </label>
-                            <select class="form-control">
-                                <option>Horaire</option>
-                                <option>Journalière</option>
-                                <option>Mensuelle</option>
-                                <option>Annuelle</option>
+                            <select class="form-control" wire:model='periodicite_id'>
+                                <option value="null" >Choisissez la périodicité...</option>
+                                @foreach ($periodicites as $periodicite)
+                                    @foreach ($tarifs as $tarif)
+                                        @if ($tarif->periodicite_id == $periodicite->id)
+                                            <option value="{{ $periodicite->id }}">{{ $periodicite->designation }}</option>
+                                        @endif
+                                    @endforeach
+                                @endforeach
                             </select>
                         </div>
                         <div class="col-md-2 form-group">
-                            <label>Périodicité </label>
-                            <input class="form-control" type="text">
+                            <label>Période </label>
+                            <input class="form-control" type="number" wire:model='period'>
                         </div>
                         <div class="col-md-5 form-group">
                             <label>Montant de la réservation</label>
-                            <input class="form-control" type="text" placeholder="$150" disabled>
+                            <input class="form-control" type="text" placeholder="0" wire:model='amount' readonly >
                             <h6 class="text-muted">NB : Avec un chauffeur, le cout de la réservation augmente</h6>
                         </div>
                         <div class="col-md-7 form-group">
@@ -116,40 +134,19 @@
                         </div>
                         <div class="col-md-8">
                             <hr>
+                            <!-- Hidden input to pass transaction_id value between JS and PHP -->
+                            <input type="hidden" id="transaction_id" wire:model='transaction_id'>
                         </div>
                         <div class="col-md-6 py-4">
-                            <kkiapay-widget amount="<montant-a-preleve-chez-le-client>" key="<votre-api-key>"
-                                url="<url-vers-votre-logo>" position="center" sandbox="true" data=""
-                                callback="<url-de-redirection-quand-lepaiement-est-reuissi>"> Passez au paiement
-                            </kkiapay-widget>
-
+                            <kkiapay-widget amount="{{ $amount }}" key="ed679fd0431c11edbaac9dddefe79ac9"
+                                url="{{ Route('home') }}" theme="#d19c97" position="center" sandbox="true"
+                                data="{'Reservation': '{{ $code }}'}" callback="{{ Route('successful_transation') }}" />
                             
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Modal For Validation-->
-        <div class="modal" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Modal body text goes here.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </form>
 </div>
 <!-- Form End -->

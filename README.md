@@ -41,9 +41,14 @@
 - ajout des images de logo de véhicules dans le fichier index de publicpages 
 - Fonctionnalités ajout d'une agence faite et fonctionnelle 
 - Jointure de allagencies à finir !!!!!!------
-
 - Suppresion livewire allvehicules 
 - Ajout d'un composant livewire removeagency et ecriture 
 - Relations entre les tables définies dans le model 
 - Création de middleware personnalisé et intégration aux routes 
 - Edition des pages de gestion des utilisateurs 
+- Ajout des assets manquants dans publicpages.layout
+- Ajout du bouton de paiement avec kkiapay (sans paramétrage)
+- Creation du fichier Payment.js et liaison avec la page de réservation pour capture du code de transaction dans un input de type hidden 
+- ajout de composant du formulaire de réservation et paramétrage 
+- recupération de l'id dans l'input caché réussit 
+- Push 

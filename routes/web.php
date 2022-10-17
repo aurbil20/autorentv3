@@ -21,9 +21,13 @@ use App\Http\Controllers\ReservationController;
 
 // Public pages interfaces
 
-Route::middleware('auth','isClient')->group(function () {
+Route::middleware('auth', 'isClient')->group(function () {
 
-    Route::get('/doreservation/{id}', [ReservationController::class,'reservation'])->name('doreservation');
+    Route::get('/doreservation/{id}', [ReservationController::class, 'reservation'])->name('doreservation');
+    Route::get('/transactionsuccess', function () {
+            return redirect()->Route('home');
+        }
+    )->name('successful_transation');
 });
 
 
@@ -49,16 +53,16 @@ Route::post('/post', [CommentaireController::class, 'store'])->name('comment');
 
 
 //Dashboard 
-Route::get('/dash/admin', [UserController::class, 'statAdmin'])->name('dashboard-admin')->middleware('auth','isAdmin');
+Route::get('/dash/admin', [UserController::class, 'statAdmin'])->name('dashboard-admin')->middleware('auth', 'isAdmin');
 
-Route::get('/dash/enterprise', [UserController::class, 'statEnterprise'])->name('dashboard-enterprise')->middleware('auth','isEnterprise');
-
-
+Route::get('/dash/enterprise', [UserController::class, 'statEnterprise'])->name('dashboard-enterprise')->middleware('auth', 'isEnterprise');
 
 
 
 
-Route::middleware('auth','isEnterprise')->group(function () {
+
+
+Route::middleware('auth', 'isEnterprise')->group(function () {
 
     // See all vehicles
     Route::get('/dash/enterprise/allvehicule', [VehiculeController::class, 'index'])->name('dashboard-allvehicle');
@@ -102,7 +106,7 @@ Route::middleware('auth','isEnterprise')->group(function () {
     })->name('dashboard-delagency');
 });
 
-Route::middleware('auth','isAdmin')->group(function () {
+Route::middleware('auth', 'isAdmin')->group(function () {
 
     // See asked Payments
     Route::get('/dash/askpaymentadmin', function () {
@@ -126,5 +130,3 @@ Route::middleware('auth','isAdmin')->group(function () {
     // Remove one user 
     Route::get('/dash/admin/deluser/{id}', [UserController::class, 'del_user'])->name('dashboard-del_user');
 });
-
-

@@ -44,7 +44,7 @@ class VehiculeController extends Controller
     {
         $agences = Agence::all();
         $tabvehicules = Vehicule::where('etat', 'Disponible')->get();
-        $vehicules = $tabvehicules->reverse();
+        $vehicules = $tabvehicules->reverse()->take(12);
         $communes = Commune::all();
         $departements = Departement::all();
         $marques = Marque_vehicule::all();

@@ -20,7 +20,7 @@
                     </div>
                     <div class="">
                         <form id="formlogin" method="POST" action="{{ Route('login') }}">
-                            @csrf
+                            @csrf 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Email address</label>
                                 <input type="email" class="form-control" name="email" id="email">

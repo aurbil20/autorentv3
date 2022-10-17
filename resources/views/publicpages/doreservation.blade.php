@@ -68,10 +68,12 @@
         </div>
     </div>
     <!-- Page Header End -->
-    @livewire('do-reservation')
+    
+    <!-- Send id parameter to livewire -->
+    @livewire('do-reservation', ['id' => $id])
+
 @endsection
 
 @section('others_scripts')
-    
- <script src="https://cdn.kkiapay.me/k.js"></script>
+    <script src="{{ asset('js/payment.js') }}"></script>
 @endsection

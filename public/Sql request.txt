@@ -1,0 +1,155 @@
+INSERT INTO `roles`(`id`, `designation`, `created_at`, `updated_at`) VALUES 
+(NULL,'admin',NULL, NULL),
+(NULL,'enterprise',NULL, NULL),
+(NULL,'client',NULL, NULL);
+
+
+
+
+INSERT INTO `type_vehicules` (`id`, `gamme`, `created_at`, `updated_at`) VALUES 
+(NULL, '4x4', NULL, NULL), 
+(NULL, 'Coupés', NULL, NULL), 
+(NULL, 'SUV', NULL, NULL), 
+(NULL, 'Berlines', NULL, NULL), 
+(NULL, 'Limousine', NULL, NULL), 
+(NULL, 'Pick-up ', NULL, NULL), 
+(NULL, 'Crossover', NULL, NULL), 
+(NULL, 'Utilitaires', NULL, NULL);
+
+
+
+
+INSERT INTO `marque_vehicules` (`id`, `name`, `created_at`, `updated_at`) VALUES 
+(NULL, 'Toyota', NULL, NULL), 
+(NULL, 'Ford ', NULL, NULL), 
+(NULL, 'Nissan ', NULL, NULL), 
+(NULL, 'Mitsubishi', NULL, NULL), 
+(NULL, 'Infiniti', NULL, NULL), 
+(NULL, 'Range Rover', NULL, NULL), 
+(NULL, 'Rolls-Royce', NULL, NULL), 
+(NULL, 'BMW', NULL, NULL), 
+(NULL, 'Opel', NULL, NULL),
+(NULL, 'Hyundai', NULL, NULL), 
+(NULL, 'Mercedes', NULL, NULL),
+(NULL, 'Audi ', NULL, NULL),
+
+
+
+
+
+INSERT INTO `periodicites` (`id`, `designation`, `created_at`, `updated_at`) VALUES 
+(NULL, 'Horaire', NULL, NULL), 
+(NULL, 'Journalier', NULL, NULL), 
+(NULL, 'Hebdomadaire', NULL, NULL), 
+(NULL, 'Mensuel', NULL, NULL);
+
+
+
+
+
+
+INSERT INTO `departements` (`id`, `designation`, `created_at`, `updated_at`) VALUES 
+(NULL, 'Atacora ', NULL, NULL), 
+(NULL, 'Donga ', NULL, NULL), 
+(NULL, 'Borgou', NULL, NULL), 
+(NULL, 'Alibori', NULL, NULL), 
+(NULL, 'Zou', NULL, NULL), 
+(NULL, 'Collines', NULL, NULL), 
+(NULL, 'Atlantique ', NULL, NULL), 
+(NULL, 'Littoral', NULL, NULL), 
+(NULL, 'Mono', NULL, NULL), 
+(NULL, 'Couffo', NULL, NULL), 
+(NULL, 'Ouémé', NULL, NULL), 
+(NULL, 'Plateau', NULL, NULL); 
+
+
+
+
+
+
+INSERT INTO `modele_vehicules` (`id`, `name`, `year`, `created_at`, `updated_at`, `marque_vehicule_id`) VALUES 
+(NULL, 'Fortuner', '2022', NULL, NULL, '1'), 
+(NULL, 'Rav 4', '2022', NULL, NULL, '1'), 
+(NULL, '4Runner', '2022', NULL, NULL, '1'),
+(NULL, 'Corolla', '2022', NULL, NULL, '1'),
+(NULL, 'Yaris', '2022', NULL, NULL, '1'),
+(NULL, 'Santa Fe', '2022', NULL, NULL, '10'), 
+(NULL, 'Tucson', '2022', NULL, NULL, '10'), 
+(NULL, 'Matrix', '2022', NULL, NULL, '10'), 
+(NULL, 'Genesis ', '2022', NULL, NULL, '10'), 
+(NULL, 'Genesis coupé', '2022', NULL, NULL, '10'), 
+(NULL, 'I1O', '2022', NULL, NULL, '10'), 
+(NULL, 'I20', '2022', NULL, NULL, '10'), 
+(NULL, 'I30', '2022', NULL, NULL, '10'), 
+(NULL, 'I40', '2022', NULL, NULL, '10'), 
+(NULL, 'IX20', '2022', NULL, NULL, '10'), 
+(NULL, 'IX35', '2022', NULL, NULL, '10');
+(NULL, 'I3', '2022', NULL, NULL, '8'), 
+(NULL, 'I4', '2022', NULL, NULL, '8'), 
+(NULL, 'I7', '2022', NULL, NULL, '8'), 
+(NULL, 'I8', '2022', NULL, NULL, '8'), 
+(NULL, 'X1', '2022', NULL, NULL, '8'), 
+(NULL, 'X2', '2022', NULL, NULL, '8'), 
+(NULL, 'X3', '2022', NULL, NULL, '8'), 
+(NULL, 'X4', '2022', NULL, NULL, '8'), 
+(NULL, 'X5', '2022', NULL, NULL, '8'), 
+(NULL, 'X6', '2022', NULL, NULL, '8'), 
+(NULL, 'X7', '2022', NULL, NULL, '8'), 
+(NULL, 'Z4', '2022', NULL, NULL, '8'),
+(NULL, 'AMG GT ', '2022', NULL, NULL, '11'), 
+(NULL, 'CITAN', '2022', NULL, NULL, '11'), 
+(NULL, 'CL', '2022', NULL, NULL, '11'), 
+(NULL, 'CLA', '2022', NULL, NULL, '11'), 
+(NULL, 'Classe A', '2022', NULL, NULL, '11'), 
+(NULL, 'Classe B', '2022', NULL, NULL, '11'), 
+(NULL, 'Classe C', '2022', NULL, NULL, '11'), 
+(NULL, 'Classe E', '2022', NULL, NULL, '11'), 
+(NULL, 'Classe G', '2022', NULL, NULL, '11'), 
+(NULL, 'Classe R', '2022', NULL, NULL, '11'), 
+(NULL, 'Classe S', '2022', NULL, NULL, '11'),
+(NULL, 'A1', '2022', NULL, NULL, '12'), 
+(NULL, 'A2', '2022', NULL, NULL, '12'), 
+(NULL, 'A3', '2022', NULL, NULL, '12'), 
+(NULL, 'A4', '2022', NULL, NULL, '12'), 
+(NULL, 'A5', '2022', NULL, NULL, '12'), 
+(NULL, 'A5 SPORTBACK', '2022', NULL, NULL, '12'), 
+(NULL, 'A6', '2022', NULL, NULL, '12'), 
+(NULL, 'A7', '2022', NULL, NULL, '12'), 
+(NULL, 'A8', '2022', NULL, NULL, '12'), 
+(NULL, 'A9', '2022', NULL, NULL, '12'), 
+(NULL, 'Q1', '2022', NULL, NULL, '12'), 
+(NULL, 'Q2', '2022', NULL, NULL, '12'), 
+(NULL, 'Q3', '2022', NULL, NULL, '12'), 
+(NULL, 'Q4', '2022', NULL, NULL, '12'), 
+(NULL, 'Q5', '2022', NULL, NULL, '12'), 
+(NULL, 'Q6', '2022', NULL, NULL, '12'), 
+(NULL, 'Q7', '2022', NULL, NULL, '12'), 
+(NULL, 'Q8', '2022', NULL, NULL, '12'), 
+(NULL, 'R8', '2022', NULL, NULL, '12'), 
+(NULL, 'TT', '2022', NULL, NULL, '12'), 
+(NULL, 'E-TRON GT', '2022', NULL, NULL, '12');
+
+
+
+
+INSERT INTO `communes` (`id`, `designation`, `created_at`, `updated_at`, `departement_id`) VALUES 
+(NULL, 'Cotonou', NULL, NULL, '8'), 
+(NULL, 'Abomey-Calavi', NULL, NULL, '7'), 
+(NULL, 'Porto-Novo', NULL, NULL, '11'), 
+(NULL, 'Parakou', NULL, NULL, '3'), 
+(NULL, 'Djougou', NULL, NULL, '2'), 
+(NULL, 'Bohicon', NULL, NULL, '5'), 
+(NULL, 'Natitingou', NULL, NULL, '1'), 
+(NULL, 'Savè', NULL, NULL, '6'), 
+(NULL, 'Abomey', NULL, NULL, '5'), 
+(NULL, 'Nikki', NULL, NULL, '3'), 
+(NULL, 'Lokossa', NULL, NULL, '9'), 
+(NULL, 'Ouidah', NULL, NULL, '7'), 
+(NULL, 'Dogbo-Tota', NULL, NULL, '10'), 
+(NULL, 'Kandi', NULL, NULL, '4'), 
+(NULL, 'Covè', NULL, NULL, '5'), 
+(NULL, 'Malanville', NULL, NULL, '4'), 
+(NULL, 'Pobè', NULL, NULL, '12'), 
+(NULL, 'Kérou', NULL, NULL, '1'), 
+(NULL, 'Savalou', NULL, NULL, '6'), 
+(NULL, 'Sakété', NULL, NULL, '12');
